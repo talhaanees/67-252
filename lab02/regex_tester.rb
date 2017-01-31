@@ -22,6 +22,10 @@ class RegexTester
         end
     end
     
+    def pattern_matches? statement
+        statement.match(@pattern) != nil
+    end
+    
 end
 
 regex = RegexTester.new
@@ -30,3 +34,8 @@ regex.pattern = /^(http:\/\/)?www\.\w+\.(com|edu|org)$/
 puts regex.pattern
 regex.statement = "http://www.google.com"
 puts regex.statement
+
+puts "------"
+regex.test
+regex.statement = "apidock.com"
+regex.test
