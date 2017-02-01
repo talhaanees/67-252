@@ -1,0 +1,12 @@
+<h3>The movies we currently have in the system are:</h3>
+<%@movies.each do |id, name|%>
+<ul>
+<li>
+<a href="/movies/<%=id%>"><%=name%></a>&nbsp
+<div class="btn-group" role="group">
+<a href="/movies/<%=id%>/edit" class="btn btn-info" role="button">Edit</a>&nbsp
+<a href="/movies/<%=id%>/delete" class="btn btn-danger" role="button">Delete</a>
+</div>
+</li>
+</ul>
+<%end%>

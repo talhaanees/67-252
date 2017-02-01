@@ -1,0 +1,20 @@
+<form class="form-horizontal" action="/movies/<%=@movie[0][0]%>" method="POST">
+<fieldset>
+<!-- Form Name -->
+<legend>New Movie:</legend>
+<!-- Text input-->
+<div class="form-group">
+<label class="col-md-4 control-label" for="name">Movie Name</label>
+<div class="col-md-4">
+<input id="name" name="name" type="text" value="<%=@movie[0][1]%>" class="form-control input-md">
+</div>
+</div>
+<!-- Button -->
+<div class="form-group">
+<label class="col-md-4 control-label" for="submit"></label>
+<div class="col-md-4">
+<button id="submit" name="submit" class="btn btn-primary">Submit</button>
+</div>
+</div>
+</fieldset>
+</form>
