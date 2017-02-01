@@ -89,5 +89,74 @@
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
+        
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Application Design and Development</h3>
+            </div>
+            <div class="panel-body">
+                <p>In this class, we are going to cover a lot of material and you will have the opportunity
+                to pull together a lot of your prior learning to develop robust and resilient web based
+                applications</p>
+                <h4>Now for some form action:</h4>
+                
+                <form class="form-horizontal" action="/" method="post">
+                <fieldset>
+                    
+                <!-- Form Name -->
+                <legend>Application Design and Development</legend>
+                
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="firstname">First Name</label>
+                    <div class="col-md-4">
+                        <input id="firstname" name="firstname" type="text" placeholder="Dan"
+                        class="form-control input-md">
+                    </div>
+                </div>
+                
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="lastname">Last Name</label>
+                    <div class="col-md-4">
+                        <input id="lastname" name="lastname" type="text" placeholder="Phelps"
+                        class="form-control input-md">
+                    </div>
+                </div>
+                
+                <!-- Select Basic -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="class_love">How much do you love this class?</label>
+                    <div class="col-md-4">
+                        <select id="class_love" name="class_love" class="form-control">
+                        <option value="A lot">A lot</option>
+                        <option value="A Whole Lot">A Whole Lot</option>
+                        <option value="A Really Whole Lot">A Really Whole Lot</option>
+                        <option value="More than I care to say">More than I care to say</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Textarea -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="feedback">Random Feedback</label>
+                    <div class="col-md-4">
+                        <textarea class="form-control" id="feedback" name="feedback">Give us feedback...</textarea>
+                    </div>
+                </div>
+                
+                <!-- Button -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="submit"></label>
+                    <div class="col-md-4">
+                        <button id="submit" name="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+                </fieldset>
+                </form>
+            </div>
+        </div>
+        
     </body>
+    
 </html>
