@@ -6,7 +6,7 @@ class DBHandler
         begin
             db = SQLite3::Database.open "course.db"
             dbstatement = "CREATE TABLE IF NOT EXISTS Courses(ID INTEGER PRIMARY KEY, CourseName TEXT
-            , CourseCredit Integer, CourseGrade Integer)"
+            , CourseCredit INTEGER, CourseGrade INTEGER)"
              db.execute dbstatement
         rescue SQLite3::Exception => e 
             puts "Exception Occurred" 
@@ -31,7 +31,7 @@ class DBHandler
 
 
 
-    def all
+    def all()
         begin
             db = SQLite3::Database.open "course.db"
             dbstatement = "Select * from Courses"
@@ -44,7 +44,7 @@ class DBHandler
         end 
     end
 
-    def count
+    def count()
         begin
             db = SQLite3::Database.open "course.db"
             dbstatement = "Select count(*) from Courses;"
@@ -56,6 +56,44 @@ class DBHandler
             db.close if db
         end 
     end
-
+    
+    def remove(id)
+        begin
+            db = SQLite3::Database.open "course.db"
+            dbstatement = "DELETE FROM Courses WHERE ID ='#{id}'"
+            db.execute dbstatement
+        rescue SQLite3::Exception => e
+            puts "Exception Occurred"
+            puts e
+        ensure
+            db.close if db
+        end
+    end
+    
+    def get(id)
+        begin
+            db = SQLite3::Database.open "course.db"
+            dbstatement = "SELECT * FROM  Courses WHERE ID=' #{id}'"
+            db.execute dbstatement
+        rescue SQLite3::Exception => e
+            puts "Exception Occurred"
+            puts e
+        ensure
+            db.close if db
+        end
+    end
+    
+    def update(id, name, credit, grade)
+        begin
+            db = SQLite3::Database.open "course.db"
+            dbstatement = "UPDATE Courses SET CourseName='#{name}', CourseCredit='#{credit}', CourseGrade='#{grade}' WHERE ID='#{id}'"
+            db.execute dbstatement
+        rescue SQLite3::Exception => e
+            puts "Exception Occurred"
+            puts e
+        ensure
+            db.close if db
+        end
+    end
 
 end

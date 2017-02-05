@@ -1,14 +1,14 @@
-<form class="form-horizontal" action="/add" method ="post">
+<form class="form-horizontal" action="/courses/<%= @course[0][0] %>" method ="post">
 <fieldset>
 
 <!-- Form Name -->
-<legend>Add new Course </legend>
+<legend>Edit Course </legend>
 
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="name">Course Name</label>  
   <div class="col-md-4">
-  <input id="name" name="name" type="text" placeholder="Course name" class="form-control input-md" required="">
+  <input id="name" name="name" type="text" value="<%= @course[0][1] %>" class="form-control input-md" required="">
   <span class="help-block">Ex. Calculus</span>  
   </div>
 </div>
@@ -17,7 +17,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="credit">Course Credit</label>  
   <div class="col-md-4">
-  <input id="credit" name="credit" type="text" placeholder="ex. 10" class="form-control input-md">
+  <input id="credit" name="credit" type="text" value="<%=@course[0][2]%>" class="form-control input-md">
   <span class="help-block">Total Units</span>  
   </div>
 </div>
@@ -26,7 +26,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="Course Grade">Course Grade</label>  
   <div class="col-md-4">
-  <input id="Course Grade" name="grade" type="text" placeholder="A, A-, B, B-, C, C-" class="form-control input-md">
+  <input id="Course Grade" name="grade" type="text" value="<%=@course[0][3]%>" class="form-control input-md">
   <span class="help-block">help</span>  
   </div>
 </div>
@@ -35,9 +35,9 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="submit"></label>
   <div class="col-md-4">
-    <button id="submit" name="submit" class="btn btn-primary">Add</button>
+    <button id="submit" name="submit" class="btn btn-primary">Submit</button>
     <br>
-    <a href="/home"><button type="button" class="btn btn-info">Back</button></a>
+    <a href="/list"><button type="button" class="btn btn-info">Back</button></a>
   </div>
 </div>
 

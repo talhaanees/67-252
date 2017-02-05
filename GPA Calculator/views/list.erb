@@ -1,0 +1,17 @@
+<h3><bold>The courses you are currently registered in the system are:</bold></h3>
+<%@courses.each do |id, name, credit, grade|%>
+<ul>
+    <li>
+        <a href="/courses/<%=id%>"><%=name%></a>&nbsp
+        <div class="btn-group" role="group">
+        <a href="/courses/<%=id%>/edit" class="btn btn-info" role="button">Edit</a>&nbsp
+        <a href="/courses/<%=id%>/delete" class="btn btn-danger" role="button">Delete</a>
+        </div>
+    </li>
+</ul>
+<%end%>
+<a href="/add"><button type="button" class="btn btn-primary btn-default btn-block">
+Add new course
+</button> </a>
+<br>
+<a href="/home"><button type="button" class="btn btn-primary btn-default btn-block">Back</button></a>

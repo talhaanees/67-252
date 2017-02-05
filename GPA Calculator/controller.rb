@@ -67,3 +67,45 @@ get '/calculate' do
     erb :result
     end
 end
+
+get '/list' do
+    db = DBHandler.new
+    @courses = db.all
+    
+    erb :application do
+        erb :list
+    end
+    
+end
+
+get '/courses/:id/delete' do
+   db = DBHandler.new
+   id = params[:id].to_i
+   db.remove(id)
+   
+   erb :application do
+        erb :delete
+    end
+end
+
+get '/courses/:id/edit' do
+   db = DBHandler.new
+   id = params[:id].to_i
+   @course = db.get(id)
+   
+   erb :application do
+        erb :edit
+    end
+end
+
+post '/courses/:id' do
+    db = DBHandler.new
+    
+    id = params[:id].to_i
+    name = params[:name]
+    credit = params[:credit]
+    grade = params[:grade]
+    
+    db.update(id, name, credit, grade)
+    redirect to '/list'
+end
